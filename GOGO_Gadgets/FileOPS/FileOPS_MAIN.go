@@ -35,7 +35,7 @@ import (
 
 	// = = = = = CUSTOM Libraries
 
-		. "github.com/acedev0/GOGO_Gadgets/a"
+		. "github.com/acedev0/LEGACY/GOGO_Gadgets"
 	
 
 	// = = = = = 3rd Party Libraries

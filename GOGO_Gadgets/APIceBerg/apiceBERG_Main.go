@@ -29,8 +29,8 @@ import (
 		"time"
 
 	// = = = = = CUSTOM Libraries
-		. "github.com/acedev0/GOGO_Gadgets/a"
-		. "github.com/acedev0/GOGO_Gadgets/StringOPS"
+		. "github.com/acedev0/LEGACY/GOGO_Gadgets"
+		. "github.com/acedev0/LEGACY/GOGO_Gadgets/StringOPS"
 
 
 	// = = = = = 3rd Party Libraries

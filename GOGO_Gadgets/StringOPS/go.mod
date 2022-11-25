@@ -1,8 +1,8 @@
-module github.com/acedev0/GOGO_Gadgets/StringOPS
+module github.com/acedev0/LEGACY/GOGO_Gadgets/StringOPS
 
 go 1.19
 
-require github.com/acedev0/GOGO_Gadgets/a v0.0.0-20221112175329-53b5fd6005c7
+require github.com/acedev0/LEGACY/GOGO_Gadgets v0.0.0-20221125202418-69942ad57925
 
 require (
 	github.com/atotto/clipboard v0.1.4 // indirect

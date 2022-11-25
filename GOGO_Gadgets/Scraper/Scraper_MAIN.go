@@ -30,7 +30,7 @@ import (
 		"net/http" // Needed for the functions that send JSON back and forth
 
 	//2. = = = CUSTOM Libraries
-		. "github.com/acedev0/GOGO_Gadgets/a"
+		. "github.com/acedev0/LEGACY/GOGO_Gadgets"
 
 	//3. = = = 3rd Party Libraries	
 		"github.com/PuerkitoBio/goquery"

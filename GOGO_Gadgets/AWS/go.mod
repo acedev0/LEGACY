@@ -1,9 +1,9 @@
-module github.com/acedev0/Legacy_GOGO_Gadgets/AWS
+module github.com/acedev0/LEGACY/GOGO_Gadgets/AWS
 
 go 1.19
 
 require (
-	github.com/acedev0/GOGO_Gadgets/a v0.0.0-20221125175845-b609a918edec
+	github.com/acedev0/LEGACY/GOGO_Gadgets v0.0.0-20221125205334-66b467f534cc
 	github.com/aws/aws-sdk-go-v2 v1.17.1
 	github.com/aws/aws-sdk-go-v2/config v1.18.3
 )

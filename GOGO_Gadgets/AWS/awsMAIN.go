@@ -8,7 +8,7 @@ import (
 	
 	"context"
 
-	. "github.com/acedev0/GOGO_Gadgets/a"
+	. "github.com/acedev0/LEGACY/GOGO_Gadgets"
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/config"

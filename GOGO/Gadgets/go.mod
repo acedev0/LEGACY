@@ -1,4 +1,4 @@
-module github.com/acedev0/LEGACY/Gadgets
+module github.com/acedev0/LEGACY/GOGO/Gadgets
 
 go 1.19
 

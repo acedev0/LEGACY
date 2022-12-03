@@ -3,8 +3,8 @@ module github.com/acedev0/LEGACY/GOGO_Gadgets/APIceBerg
 go 1.19
 
 require (
-	github.com/acedev0/LEGACY/GOGO_Gadgets v0.0.0-20221203022542-efabdad4bc6b
-	github.com/acedev0/LEGACY/GOGO_Gadgets/StringOPS v0.0.0-20221203022542-efabdad4bc6b
+	github.com/acedev0/LEGACY/GOGO_Gadgets v0.0.0-20221203022630-9476b5f3ec4c
+	github.com/acedev0/LEGACY/GOGO_Gadgets/StringOPS v0.0.0-20221203022630-9476b5f3ec4c
 	github.com/buger/jsonparser v1.1.1
 )
 

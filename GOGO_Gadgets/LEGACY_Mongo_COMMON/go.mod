@@ -3,7 +3,7 @@ module github.com/acedev0/LEGACY/GOGO_Gadgets/LEGACY_Mongo_COMMON
 go 1.19
 
 require (
-	github.com/acedev0/LEGACY/GOGO_Gadgets v0.0.0-20221125210336-0f3b1037f032
+	github.com/acedev0/LEGACY/GOGO_Gadgets v0.0.0-20221203022630-9476b5f3ec4c
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 )
 

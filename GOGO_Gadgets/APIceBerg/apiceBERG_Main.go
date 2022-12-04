@@ -27,6 +27,7 @@ import (
 		"unicode"
 		"context"
 		"time"
+		"encoding/json"
 
 	// = = = = = CUSTOM Libraries
 		. "github.com/acedev0/LEGACY/GOGO_Gadgets"
@@ -35,6 +36,7 @@ import (
 
 	// = = = = = 3rd Party Libraries
 		"github.com/buger/jsonparser"
+		"github.com/TylerBrock/colorjson"
 
 )
 
@@ -106,11 +108,13 @@ func GEN_PRETTY_JSON(tmpOBJ interface{}) (string, string) {
 
 
 // This makes "API" json you can retrieve from jquery or VUEjs
-func MAKE_API_JSON(tmpOBJ interface{}) {
+func MAKE_API_JSON(tmpOBJ interface{}) string {
 
 	JSON_CONTENT, _ := GEN_PRETTY_JSON(tmpOBJ)
 
 	var JSON_RESULT = JSON_TOP + JSON_CONTENT + JSON_BOTTOM
+
+	return JSON_RESULT
 }
 
 

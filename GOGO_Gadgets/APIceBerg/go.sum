@@ -1,9 +1,9 @@
 github.com/TylerBrock/colorjson v0.0.0-20200706003622-8a50f05110d2 h1:ZBbLwSJqkHBuFDA6DUhhse0IGJ7T5bemHyNILUjvOq4=
 github.com/TylerBrock/colorjson v0.0.0-20200706003622-8a50f05110d2/go.mod h1:VSw57q4QFiWDbRnjdX8Cb3Ow0SFncRw+bA/ofY6Q83w=
-github.com/acedev0/LEGACY/GOGO_Gadgets v0.0.0-20221204064308-f4ae56a8da86 h1:obVrLbURRwSOl/hPsHP2yC9sKQaIC7yqwgymwp2Bcao=
-github.com/acedev0/LEGACY/GOGO_Gadgets v0.0.0-20221204064308-f4ae56a8da86/go.mod h1:lAcgJe0apxZrkpZepXM0R9GOqui8vZJv/gDypHkjmGg=
-github.com/acedev0/LEGACY/GOGO_Gadgets/StringOPS v0.0.0-20221204064308-f4ae56a8da86 h1:MqK18MuEHZ4nFPRXknFJCZ3qTfWWkqglDBRByt4NQYo=
-github.com/acedev0/LEGACY/GOGO_Gadgets/StringOPS v0.0.0-20221204064308-f4ae56a8da86/go.mod h1:NaGhmV6lErHx5YhfLBBJrOPvceFp092cmKSbxy+HVoE=
+github.com/acedev0/LEGACY/GOGO_Gadgets v0.0.0-20221204070313-70975ac58068 h1:qc9sXnc0Qq+o2+f3hhCMlaGgklXN3gU79suMc50PuiA=
+github.com/acedev0/LEGACY/GOGO_Gadgets v0.0.0-20221204070313-70975ac58068/go.mod h1:lAcgJe0apxZrkpZepXM0R9GOqui8vZJv/gDypHkjmGg=
+github.com/acedev0/LEGACY/GOGO_Gadgets/StringOPS v0.0.0-20221204070313-70975ac58068 h1:j69i7XZERL883NjNxomHh2ROp+k7jFJFkz571H9GA8U=
+github.com/acedev0/LEGACY/GOGO_Gadgets/StringOPS v0.0.0-20221204070313-70975ac58068/go.mod h1:NaGhmV6lErHx5YhfLBBJrOPvceFp092cmKSbxy+HVoE=
 github.com/atotto/clipboard v0.1.4 h1:EH0zSVneZPSuFR11BlR9YppQTVDbh5+16AmcJi4g1z4=
 github.com/atotto/clipboard v0.1.4/go.mod h1:ZY9tmq7sm5xIbd9bOK4onWV4S6X0u6GY7Vn0Yu86PYI=
 github.com/briandowns/spinner v1.19.0 h1:s8aq38H+Qju89yhp89b4iIiMzMm8YN3p6vGpwyh/a8E=

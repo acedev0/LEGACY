@@ -36,7 +36,7 @@ import (
 
 	// = = = = = 3rd Party Libraries
 		"github.com/buger/jsonparser"
-		"github.com/TylerBrock/colorjson"
+		
 
 )
 
@@ -78,33 +78,32 @@ var JSON_BOTTOM =`
 }
 `
 
+/*
+
+	If you want the JSON tha tis renndered to show up with a different name... do this:
+
+		TOTAL_ORDERS 	int			`json:"TotalOrders"`
+
+	or if you DONT want the struct member to show up in the json at ALL.. use this:
+
+		QUERY_DATE 		time.Time	`json:"-"`
+
+	NOTE: For AWS SDK v2, 
+		If you are inserting into DynomoDB... you'll need to do this (its the only way Dynamo recognizes the field)
+		Dynamo always uses LOWER case by the way
+
+		TOTAL_ORDERS 	int			`dynamodbav:"total_orders"`
 
 
-// This takes any struct and returns "regular" json and pretty colorized JSON
-func GEN_PRETTY_JSON(tmpOBJ interface{}) (string, string) {
+Access dynomo with AWS SDK like this:
+	import  (
+		“github.com/aws/aws-sdk-go-v2/aws”
+        “github.com/aws/aws-sdk-go-v2/config”
+        “github.com/aws/aws-sdk-go-v2/service/dynamodb”
+        “github.com/aws/aws-sdk-go-v2/feature/dynamodb/attributevalue”		
+	)
+*/
 
-	// tmp_JSON_OBJ, err := json.Marshal(tmpOBJ)  // Marshall takes a struct and makes it into JSON
-	tmp_JSON_OBJ, err := json.MarshalIndent(tmpOBJ, "", "\t")  // Marshall takes a struct and makes it into JSON
-	
-	if err != nil {
-		R.Println(" error in the GEN_PRETTY_JSON ")
-		W.Println(err)
-		return "", ""
-	}
-	
-	var obj map[string]interface{}
-	json.Unmarshal(tmp_JSON_OBJ, &obj)		// Unmarshall takes json and puts it in a struct // marshall does the opposite
-
-	// Marshall the Colorized JSON, Make a custom formatter with indent set
-	f := colorjson.NewFormatter()
-	f.Indent = 4
-	colorTEMP, _ := f.Marshal(obj)
-	pretty_color_JSON := string(colorTEMP)
-	regular_JSON := string(tmp_JSON_OBJ)
-
-	return regular_JSON, pretty_color_JSON
-
-} //end of func
 
 
 // This makes "API" json you can retrieve from jquery or VUEjs

@@ -27,6 +27,7 @@ import (
 		"unicode"
 		"context"
 		"time"
+		"encoding/json"
 
 	// = = = = = CUSTOM Libraries
 		. "github.com/acedev0/LEGACY/GOGO_Gadgets"
@@ -108,11 +109,22 @@ Access dynomo with AWS SDK like this:
 // This makes "API" json you can retrieve from jquery or VUEjs
 func MAKE_API_JSON(tmpOBJ interface{}) string {
 
-	JSON_CONTENT, _ := GEN_PRETTY_JSON(tmpOBJ)
+	type API_JSON_OBJ struct {
+		data 		[]interface{}	
+	}
 
-	var JSON_RESULT = JSON_TOP + JSON_CONTENT + JSON_BOTTOM
+	var a API_JSON_OBJ
+	a.data[0] = tmpOBJ
 
-	return JSON_RESULT
+	JSON_RESULT, err := json.MarshalIndent(a, "", "\t")  // Marshall takes a struct and makes it into JSON
+	
+	if err != nil {
+		R.Println(" error in the MAKE_API_JSON ")
+		W.Println(err)
+		return ""
+	}	
+
+	return string(JSON_RESULT)
 }
 
 

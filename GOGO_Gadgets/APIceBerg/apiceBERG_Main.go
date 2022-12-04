@@ -27,7 +27,6 @@ import (
 		"unicode"
 		"context"
 		"time"
-		"encoding/json"
 
 	// = = = = = CUSTOM Libraries
 		. "github.com/acedev0/LEGACY/GOGO_Gadgets"

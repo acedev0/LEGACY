@@ -1,7 +1,9 @@
-github.com/acedev0/LEGACY/GOGO_Gadgets v0.0.0-20221204053210-f6309b227de2 h1:PNRNPb2t8Wojcwm6NDWOECYlpWwwfBt2LYdEROrC/1Q=
-github.com/acedev0/LEGACY/GOGO_Gadgets v0.0.0-20221204053210-f6309b227de2/go.mod h1:V3XTmiWbLWn9ubqjwHrrCBTltjlkItgC2yayXaMDarI=
-github.com/acedev0/LEGACY/GOGO_Gadgets/StringOPS v0.0.0-20221204053210-f6309b227de2 h1:2sWflVsxzZRs6tFNQgACULNgVAUxunFYRxHXGOLqBvg=
-github.com/acedev0/LEGACY/GOGO_Gadgets/StringOPS v0.0.0-20221204053210-f6309b227de2/go.mod h1:NaGhmV6lErHx5YhfLBBJrOPvceFp092cmKSbxy+HVoE=
+github.com/TylerBrock/colorjson v0.0.0-20200706003622-8a50f05110d2 h1:ZBbLwSJqkHBuFDA6DUhhse0IGJ7T5bemHyNILUjvOq4=
+github.com/TylerBrock/colorjson v0.0.0-20200706003622-8a50f05110d2/go.mod h1:VSw57q4QFiWDbRnjdX8Cb3Ow0SFncRw+bA/ofY6Q83w=
+github.com/acedev0/LEGACY/GOGO_Gadgets v0.0.0-20221204060103-19740ea2eeb8 h1:kXP29A88DIIcW8mrrBfnRkMeQOV7yM9kInUJtUAVi9k=
+github.com/acedev0/LEGACY/GOGO_Gadgets v0.0.0-20221204060103-19740ea2eeb8/go.mod h1:lAcgJe0apxZrkpZepXM0R9GOqui8vZJv/gDypHkjmGg=
+github.com/acedev0/LEGACY/GOGO_Gadgets/StringOPS v0.0.0-20221204060103-19740ea2eeb8 h1:IPwhASXzQjCQ48Ao01ofox71gdgsWeTxyqs7k939WhM=
+github.com/acedev0/LEGACY/GOGO_Gadgets/StringOPS v0.0.0-20221204060103-19740ea2eeb8/go.mod h1:NaGhmV6lErHx5YhfLBBJrOPvceFp092cmKSbxy+HVoE=
 github.com/atotto/clipboard v0.1.4 h1:EH0zSVneZPSuFR11BlR9YppQTVDbh5+16AmcJi4g1z4=
 github.com/atotto/clipboard v0.1.4/go.mod h1:ZY9tmq7sm5xIbd9bOK4onWV4S6X0u6GY7Vn0Yu86PYI=
 github.com/briandowns/spinner v1.19.0 h1:s8aq38H+Qju89yhp89b4iIiMzMm8YN3p6vGpwyh/a8E=
@@ -13,6 +15,7 @@ github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25Kn
 github.com/fatih/color v1.7.0/go.mod h1:Zm6kSWBoL9eyXnKyktHP6abPY2pDugNf5KwzbycvMj4=
 github.com/fatih/color v1.13.0 h1:8LOYc1KYPPmyKMuN8QV2DNRWNbLo6LZ0iLs8+mlH53w=
 github.com/fatih/color v1.13.0/go.mod h1:kLAiJbzzSOZDVNGyDpeOxJ47H46qBXwg5ILebYFFOfk=
+github.com/hokaccha/go-prettyjson v0.0.0-20211117102719-0474bc63780f h1:7LYC+Yfkj3CTRcShK0KOL/w6iTiKyqqBA9a41Wnggw8=
 github.com/janeczku/go-spinner v0.0.0-20150530144529-cf8ef1d64394 h1:X8X7KPD2Gfk34zCn4C47e5UxUK72Oz8sBpe6aiN1gZE=
 github.com/janeczku/go-spinner v0.0.0-20150530144529-cf8ef1d64394/go.mod h1:Z8lFST9wVOwMDDBpMpCCnpk93WKTb+UWT/4TTUxWZzA=
 github.com/mattn/go-colorable v0.1.2/go.mod h1:U0ppj6V5qS13XJ6of8GYAs25YV2eR4EVcfRqFIhoBtE=

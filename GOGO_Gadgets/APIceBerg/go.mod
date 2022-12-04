@@ -3,12 +3,13 @@ module github.com/acedev0/LEGACY/GOGO_Gadgets/APIceBerg
 go 1.19
 
 require (
-	github.com/acedev0/LEGACY/GOGO_Gadgets v0.0.0-20221204053210-f6309b227de2
-	github.com/acedev0/LEGACY/GOGO_Gadgets/StringOPS v0.0.0-20221204053210-f6309b227de2
+	github.com/acedev0/LEGACY/GOGO_Gadgets v0.0.0-20221204060103-19740ea2eeb8
+	github.com/acedev0/LEGACY/GOGO_Gadgets/StringOPS v0.0.0-20221204060103-19740ea2eeb8
 	github.com/buger/jsonparser v1.1.1
 )
 
 require (
+	github.com/TylerBrock/colorjson v0.0.0-20200706003622-8a50f05110d2 // indirect
 	github.com/atotto/clipboard v0.1.4 // indirect
 	github.com/briandowns/spinner v1.19.0 // indirect
 	github.com/dustin/go-humanize v1.0.0 // indirect

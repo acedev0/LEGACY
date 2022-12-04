@@ -105,16 +105,17 @@ Access dynomo with AWS SDK like this:
 */
 
 
+type API_JSON_OBJ struct {
+	DATA 		[]interface{}		`json:"data"`
+}
 
 // This makes "API" json you can retrieve from jquery or VUEjs
 func MAKE_API_JSON(tmpOBJ interface{}) string {
 
-	type API_JSON_OBJ struct {
-		data 		[]interface{}	
-	}
+
 
 	var a API_JSON_OBJ
-	a.data[0] = tmpOBJ
+	a.DATA = append(a.DATA, tmpOBJ)
 
 	JSON_RESULT, err := json.MarshalIndent(a, "", "\t")  // Marshall takes a struct and makes it into JSON
 	

@@ -62,22 +62,6 @@ type HEADER_OBJ struct {
 }
 
 
-
-
-
-
-var JSON_TOP =`
-{
- "data" : [
-	
-      `
-
-var JSON_BOTTOM =`
-
- ]
-}
-`
-
 /*
 
 	If you want the JSON tha tis renndered to show up with a different name... do this:

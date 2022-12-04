@@ -1291,12 +1291,13 @@ func GET_CURRENT_TIME(EXTRA_ARGS ...string) (string, time.Time) {
 
 
 func PRETTY_STRUCT_json(input interface{}) string {
-	byte_json, _ := json.MarshalIndent(input, "", "  ")
+	byte_json, _ := json.MarshalIndent(input, "", "\t")  // Marshall takes a struct and makes it into JSON
 
 	result := string(byte_json)
 
 	return result
 }
+
 // RETURNS a STRUCt in JSON format.. a string..which you can PRINTLN
 func SHOW_STRUCT(ALL_PARAMS ...interface{}) {
 	

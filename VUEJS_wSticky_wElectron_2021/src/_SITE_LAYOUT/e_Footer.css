@@ -1,0 +1,15 @@
+.terryFooterText {
+  color:#ff55ff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.DEFAULT_FOOTER_STYLING{
+  background: rgb(10, 143, 41);
+  padding: 0px;     /* remove this if it gets weird: debug */
+}
+
+
+
+.debug_border_FOOTER {
+  border: 5px solid red;
+}

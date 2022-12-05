@@ -1,0 +1,24 @@
+
+a {
+  color:#0ae21c;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+a:visited {
+  color:#0ae21c;
+  
+}
+a:hover {
+  color: hotpink;
+  text-decoration: none;
+}
+
+.debug_border {
+  border: 5px solid blue;
+}
+
+.DEFAULT_HEADER_STYLING{
+  background: #6e1140;
+}

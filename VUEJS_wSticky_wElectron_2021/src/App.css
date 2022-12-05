@@ -1,0 +1,51 @@
+/*
+    = = = = = = = = = = = = = = = = = = = = 
+
+        You Should never modify this page! It defines the 'Sticky Footer' used for overall site look and feel
+
+        Everything between these blocks is ABSOLUTELY REQUIRED..
+    = = = = = = = = = = = = = = = = = = = = 
+
+*/
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font: 16px Sans-Serif;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  flex: 1 0 auto;
+  /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+  padding: 0px;
+  text-align: center;
+  background-color: white;
+  /* border: 5px solid red;     usful for debug of margins */
+}
+
+.header {
+  text-align: center;
+}
+
+.footer {
+  flex-shrink: 0;
+  /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+  padding: 20px;
+  text-align: center;
+}
+
+/*
+    = = = = = = = = =  End of Required Stuff = = = = = = = = = = = =
+*/
+
+
+

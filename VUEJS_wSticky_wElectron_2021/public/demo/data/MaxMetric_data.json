@@ -1,0 +1,98 @@
+{
+	"data" : [
+	
+		{
+			"ORDER_ID":"0050f39b-0e78-4fe8-afd6-3b95b087dd1e-APS",
+			"DATE_START":"Tue, Mar_03/29/2022 @ 16:05:16 ( 4:05 pm )",
+			"DATE_FINISH":"Tue, Apr_04/05/2022 @ 09:33:11 ( 9:33 am )",
+			"DESC":"Apple",
+			"CLIENT":"eGIS",
+			"PRODUCT":"Vivid_Advanced_Yazd_IR_YYQQ",
+			"DURATION":"161.5",
+			"SQKM":"1195.5773",
+			"ORDER_PLACED":"6.1 Hours",
+			"MATERIAL_SELECT":"0.4 Hours",
+			"BBA_START":"10.0 Hours",
+			"BBA_COMPLETE":"50.9 Hours",
+			"GEO_SETUP":"1.1 Hours",
+			"GEO_START":"1.7 Hours",
+			"GEO_EDIT":"5.0 Hours",
+			"GEO_PART1":"0.4 Hours",
+			"GEO_PART2":"0.3 Hours",
+			"GEO_PART3":"85.1 Hours",
+			"GEO_PART4":"0.2 Hours",
+			"GEO_EXPORT_FINAL":"86.0 Hours"
+		},
+	
+		{
+			"ORDER_ID":"1f601ea4-1799-400e-ae8c-0a8568344c9e-APS",
+			"DATE_START":"Tue, Mar_03/29/2022 @ 16:05:07 ( 4:05 pm )",
+			"DATE_FINISH":"Mon, Apr_04/04/2022 @ 12:09:17 ( 12:09 am )",
+			"DESC":"Apple+ESRI",
+			"CLIENT":"eGIS",
+			"PRODUCT":"Vivid_Advanced_Aligarh_IN_YYQQ",
+			"DURATION":"140.1",
+			"SQKM":"1159.9335",
+			"ORDER_PLACED":"6.1 Hours",
+			"MATERIAL_SELECT":"0.6 Hours",
+			"BBA_START":"10.0 Hours",
+			"BBA_COMPLETE":"50.9 Hours",
+			"GEO_SETUP":"1.4 Hours",
+			"GEO_START":"1.4 Hours",
+			"GEO_EDIT":"9.5 Hours",
+			"GEO_PART1":"0.4 Hours",
+			"GEO_PART2":"0.4 Hours",
+			"GEO_PART3":"59.2 Hours",
+			"GEO_PART4":"0.1 Hours",
+			"GEO_EXPORT_FINAL":"60.2 Hours"
+		},
+	
+		{
+			"ORDER_ID":"915ed4cc-8e94-45bb-85dd-0811eab10e2a-APS",
+			"DATE_START":"Tue, Mar_03/22/2022 @ 15:19:25 ( 3:19 pm )",
+			"DATE_FINISH":"Sat, Apr_04/02/2022 @ 14:19:24 ( 2:19 pm )",
+			"DESC":"Apple+ESRI+Here",
+			"CLIENT":"eGIS",
+			"PRODUCT":"Vivid_Advanced_Tashkent_UZ_YYQQ",
+			"DURATION":"263.0",
+			"SQKM":"1436.8538",
+			"ORDER_PLACED":"19.5 Hours",
+			"MATERIAL_SELECT":"0.2 Hours",
+			"BBA_START":"23.9 Hours",
+			"BBA_COMPLETE":"23.3 Hours",
+			"GEO_SETUP":"2.1 Hours",
+			"GEO_START":"6.6 Hours",
+			"GEO_EDIT":"144.5 Hours",
+			"GEO_PART1":"0.7 Hours",
+			"GEO_PART2":"0.4 Hours",
+			"GEO_PART3":"41.6 Hours",
+			"GEO_PART4":"0.2 Hours",
+			"GEO_EXPORT_FINAL":"42.9 Hours"
+		},
+	
+		{
+			"ORDER_ID":"0afa8941-abfc-4d5a-b471-27d406499cc4-APS",
+			"DATE_START":"Tue, Mar_03/22/2022 @ 15:19:24 ( 3:19 pm )",
+			"DATE_FINISH":"Tue, Mar_03/29/2022 @ 09:09:21 ( 9:09 am )",
+			"DESC":"Apple",
+			"CLIENT":"eGIS",
+			"PRODUCT":"Vivid_Advanced_Kirovohrad_UA_YYQQ",
+			"DURATION":"161.8",
+			"SQKM":"269.7725",
+			"ORDER_PLACED":"21.1 Hours",
+			"MATERIAL_SELECT":"0.5 Hours",
+			"BBA_START":"20.6 Hours",
+			"BBA_COMPLETE":"23.8 Hours",
+			"GEO_SETUP":"1.0 Hours",
+			"GEO_START":"2.9 Hours",
+			"GEO_EDIT":"0.4 Hours",
+			"GEO_PART1":"0.2 Hours",
+			"GEO_PART2":"0.2 Hours",
+			"GEO_PART3":"91.0 Hours",
+			"GEO_PART4":"0.1 Hours",
+			"GEO_EXPORT_FINAL":"91.5 Hours"
+		}
+
+	]
+}
+

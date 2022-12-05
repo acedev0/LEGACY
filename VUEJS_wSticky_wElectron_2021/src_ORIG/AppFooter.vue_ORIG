@@ -1,0 +1,20 @@
+<template>
+	<div class="layout-footer clearfix">
+		<a href="/">
+			<img alt="logo-colored" src="layout/images/logo-colored.png" />
+		</a>
+		<span class="footer-text-right">
+			<span>All Rights Reserved</span>
+		</span>
+	</div>
+</template>
+
+<script>
+	export default {
+		name: "AppFooter"
+	}
+</script>
+
+<style scoped>
+
+</style>

@@ -1,0 +1,9 @@
+hey.. Vue wont work right unless you have THESE hidden files:
+
+
+-rw-r--r--@    1 cowboy  staff       33 Apr 23 18:03 .browserslistrc
+-rw-r--r--@    1 cowboy  staff      337 Apr 23 18:03 .eslintrc.js
+-rw-r--r--@    1 cowboy  staff      129 Apr 23 18:03 .prettierrc
+
+
+

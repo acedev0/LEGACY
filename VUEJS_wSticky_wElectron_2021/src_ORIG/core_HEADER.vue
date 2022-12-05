@@ -1,0 +1,221 @@
+<template>
+	<div class="layout-topbar">
+	
+		<button v-if="layoutMode === 'horizontal'" class="p-link topbar-logo">
+			<img src="@/_GLOBAL_IMAGES/MAXAR_LOGO.jpeg" alt="avatar"/>
+			<span class="app-name">MaxMet</span>
+		</button>
+
+		
+
+		<button class="p-link menu-btn" > <!-- @click="onMenuButtonClick"> -->
+			<i class="pi pi-bars"></i>
+		</button>
+
+		<button class="p-link topbar-menu-btn"> <!-- @click="onTopbarMobileMenuButtonClick"> -->
+			<i class="pi pi-user"></i>
+		</button>
+
+		<div class="layout-topbar-menu-wrapper">
+			<ul :class="topbarMenuClass">
+				<li :class="['profile-item',{'active-topmenuitem': activeTopbarItem === 'profile'}]">
+					<button class="p-link"> <!-- @click="onTopbarItemClick($event, 'profile')"> -->
+						<span class="profile-image-wrapper">
+							<img src="@/_GLOBAL_IMAGES/MAXAR_LOGO.jpeg" alt="avatar"/>
+						</span>
+						<span class="topbar-item-name profile-name">MaxMet - Maxar Reporting and Analysis Tool</span>
+					</button>
+					<!--
+					<transition name="layout-submenu-container">
+						<ul class="fadeInDown" v-show="activeTopbarItem === 'profile'">
+							<li role="menuitem">
+								<button class="p-link">
+									<i class="pi pi-user"></i>
+									<span>Profile</span>
+								</button>
+							</li>
+							<li role="menuitem">
+								<button class="p-link">
+									<i class="pi pi-lock"></i>
+									<span>Privacy</span>
+								</button>
+							</li>
+							<li role="menuitem">
+								<button class="p-link">
+									<i class="pi pi-cog"></i>
+									<span>Settings</span>
+								</button>
+							</li>
+							<li role="menuitem">
+								<button class="p-link">
+									<i class="pi pi-sign-out"></i>
+									<span>Logout</span>
+								</button>
+							</li>
+						</ul>
+					</transition>
+					--->
+				</li>
+
+				<!-- 
+				<li :class="[{'active-topmenuitem': activeTopbarItem === 'settings'}]">
+					<button class="p-link" @click="onTopbarItemClick($event, 'settings')">
+						<i class="topbar-icon pi pi-cog"></i>
+						<span class="topbar-item-name">Settings</span>
+					</button>
+					<transition name="layout-submenu-container">
+						<ul class="fadeInDown" v-show="activeTopbarItem === 'settings'">
+							<li role="menuitem">
+								<button class="p-link">
+									<i class="pi pi-palette"></i>
+									<span>Change Theme</span>
+								</button>
+							</li>
+							<li role="menuitem">
+								<button class="p-link">
+									<i class="pi pi-heart"></i>
+									<span>Favorites</span>
+								</button>
+							</li>
+							<li role="menuitem">
+								<button class="p-link">
+									<i class="pi pi-lock"></i>
+									<span>Lock Screen</span>
+								</button>
+							</li>
+							<li role="menuitem">
+								<button class="p-link">
+									<i class="pi pi-image"></i>
+									<span>Wallpaper</span>
+								</button>
+							</li>
+						</ul>
+					</transition>
+				</li>
+				<li :class="[{'active-topmenuitem': activeTopbarItem === 'messages'}]">
+					<button class="p-link" @click="onTopbarItemClick($event, 'messages')">
+						<i class="topbar-icon pi pi-envelope animated swing"></i>
+						<span class="topbar-badge animated rubberBand">5</span>
+						<span class="topbar-item-name">Messages</span>
+					</button>
+
+					<transition name="layout-submenu-container">
+						<ul class="fadeInDown" v-show="activeTopbarItem === 'messages'">
+							<li role="menuitem">
+								<button class="topbar-message p-link">
+									<img src="layout/images/avatar1.png" width="35" alt="avatar1"/>
+									<span>Give me a call</span>
+								</button>
+							</li>
+							<li role="menuitem">
+								<button class="topbar-message p-link">
+									<img src="layout/images/avatar2.png" width="35" alt="avatar2"/>
+									<span>Sales reports attached</span>
+								</button>
+							</li>
+							<li role="menuitem">
+								<button class="topbar-message p-link">
+									<img src="layout/images/avatar3.png" width="35" alt="avatar3"/>
+									<span>About your invoice</span>
+								</button>
+							</li>
+							<li role="menuitem">
+								<button class="topbar-message p-link">
+									<img src="layout/images/avatar2.png" width="35" alt="avatar2"/>
+									<span>Meeting today at 10pm</span>
+								</button>
+							</li>
+							<li role="menuitem">
+								<button class="topbar-message p-link">
+									<img src="layout/images/avatar4.png" width="35" alt="avatar4"/>
+									<span>Out of office</span>
+								</button>
+							</li>
+						</ul>
+					</transition>
+				</li>
+				<li :class="[{'active-topmenuitem': activeTopbarItem === 'notifications'}]">
+					<button class="p-link" @click="onTopbarItemClick($event, 'notifications')">
+						<i class="topbar-icon pi pi-bell"></i>
+						<span class="topbar-badge animated rubberBand">4</span>
+						<span class="topbar-item-name">Notifications</span>
+					</button>
+					<transition name="layout-submenu-container">
+						<ul class="fadeInDown" v-show="activeTopbarItem === 'notifications'">
+							<li role="menuitem">
+								<button class="p-link">
+									<i class="pi pi-sliders-h"></i>
+									<span>Pending tasks</span>
+								</button>
+							</li>
+							<li role="menuitem">
+								<button class="p-link">
+									<i class="pi pi-calendar"></i>
+									<span>Meeting today at 3pm</span>
+								</button>
+							</li>
+							<li role="menuitem">
+								<button class="p-link">
+									<i class="pi pi-download"></i>
+									<span>Download documents</span>
+								</button>
+							</li>
+							<li role="menuitem">
+								<button class="p-link">
+									<i class="pi pi-ticket"></i>
+									<span>Book flight</span>
+								</button>
+							</li>
+						</ul>
+					</transition>
+				</li>
+
+				
+				<li :class="['search-item', {'active-topmenuitem': activeTopbarItem === 'search'}]"
+					@click="onTopbarItemClick($event, 'search')">
+					<span class="p-float-label p-input-icon-right">
+						<i class="topbar-icon pi pi-search"></i>
+						<InputText id="search" type="text" v-model="searchText" placeholder="Search"/>
+					</span>
+				</li>
+
+				-->
+
+			</ul>
+		</div>
+	</div>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				searchText: ''
+			}
+		},
+		emits: ['menu-button-click', 'topbar-mobile-menu-button-click', 'topbar-item-click'],
+		props: {
+			layoutMode: String,
+			activeTopbarItem: String,
+			topbarMenuActive: Boolean
+		},
+		methods: {
+			onMenuButtonClick(event) {
+				this.$emit('menu-button-click', event);
+			},
+			onTopbarMobileMenuButtonClick(event) {
+				this.$emit('topbar-mobile-menu-button-click', event);
+			},
+			onTopbarItemClick(event, item) {
+				this.$emit('topbar-item-click', {originalEvent: event, item: item});
+			}
+		},
+		computed: {
+			topbarMenuClass() {
+				return ['topbar-menu fadeInDown', {
+					'topbar-menu-active': this.topbarMenuActive
+				}];
+			}
+		}
+	}
+</script>

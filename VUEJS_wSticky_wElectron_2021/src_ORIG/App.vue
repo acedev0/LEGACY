@@ -1,0 +1,380 @@
+<template>
+	<div :class="containerClass" @click="onWrapperClick">
+
+	<!--   This is what controls the Side Bar
+		<div ref="sidebar" :class="sidebarClass" @click="onSidebarClick" @mouseenter="onSidebarMouseEnter" @mouseleave="onSidebarMouseLeave">
+			<div class="sidebar-logo">
+				<router-link to="/">
+					<img alt="logo" src="layout/images/logo-slim.png" />
+					<span class="app-name">SERENITY</span>
+				</router-link>
+				<button class="p-link sidebar-anchor" title="Toggle Menu" @click="onToggleMenuClick"> </button>
+			</div>
+
+			<div class="layout-menu-container">
+				<AppMenu :model="menu" :layoutMode="layoutMode" :sidebarActive="sidebarActive" :active="menuActive" :mobileMenuActive="mobileMenuActive" @menuitem-click="onMenuItemClick" @root-menuitem-click="onRootMenuItemClick"></AppMenu>
+			</div>
+		</div>
+
+	-->
+
+		<div class="layout-main">
+			<AppTopBar :layoutMode="layoutMode" :activeTopbarItem="activeTopbarItem" :topbarMenuActive="topbarMenuActive" @menu-button-click="onMenuButtonClick"
+						@topbar-item-click="onTopbarItemClick" @topbar-mobile-menu-button-click="onTopbarMobileMenuButtonClick"/>
+
+			<AppBreadcrumb></AppBreadcrumb>
+
+			<div class="layout-content">
+				<router-view />
+			</div>
+
+			<AppConfig :layoutMode="layoutMode" @layout-change="onLayoutChange" :darkMenu="darkMenu" @menu-color-change="onMenuColorChange"
+						:layoutColor="layoutColor" :layoutSpecialColors="layoutSpecialColors" :layoutColors="layoutColors" @layout-color-change="changeLayout"
+						:theme="theme" :themes="themeColors" @theme-change="changeTheme"
+						:isRTL="isRTL" @change-orientation="changeOrientation" :layoutScheme='layoutScheme' @layout-scheme-change='changeLayoutScheme'></AppConfig>
+
+			<AppFooter />
+
+			<div class="layout-main-mask" v-if="mobileMenuActive"></div>
+		</div>
+	</div>
+</template>
+
+<script>
+import AppTopBar from './AppTopbar.vue';
+import AppConfig from './AppConfig.vue';
+import AppFooter from './AppFooter.vue';
+import AppBreadcrumb from './AppBreadcrumb.vue';
+import EventBus from './event-bus';
+//import AppMenu from './AppMenu.vue';
+
+
+export default {
+	props: {
+		theme: String,
+		layoutColor: String,
+        layoutScheme: String,
+        darkMenu: Boolean,
+	},
+    data() {
+        return {
+			activeTopbarItem: null,
+			layoutMode: 'overlay',
+			mobileMenuActive: null,
+			topbarMenuActive: null,
+			currentRoute: null,
+			menuActive: false,
+			isRTL: false,
+			sidebarActive: false,
+            menu : [
+				{
+					label: 'Favorites', icon: 'pi pi-fw pi-home',
+					items: [
+						{label: 'Dashboard', icon: 'pi pi-fw pi-home', to:'/'},
+					]				
+				},
+				{
+					label: 'UI Kit', icon: 'pi pi-fw pi-star', badge: 6,
+					items: [
+						{label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout'},
+						{label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input'},
+						{label: "Float Label", icon: "pi pi-fw pi-bookmark", to: "/floatlabel"},
+						{label: "Invalid State", icon: "pi pi-fw pi-exclamation-circle", to: "/invalidstate"},
+						{label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/button', class: 'rotated-icon'},
+						{label: 'Table', icon: 'pi pi-fw pi-table', to: '/table'},
+						{label: 'List', icon: 'pi pi-fw pi-list', to: '/list'},
+						{label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/tree'},
+						{label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/panel'},
+						{label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/overlay'},
+						{label: "Media", icon: "pi pi-fw pi-image", to: "/media"},
+						{label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/menus'},
+						{label: 'Message', icon: 'pi pi-fw pi-comment', to: '/messages'},
+						{label: 'File', icon: 'pi pi-fw pi-file', to: '/file'},
+						{label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/chart'},
+						{label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc'},
+					]
+				},
+				{
+					label: "Utilities", icon:'pi pi-fw pi-compass',
+					items: [
+						{label: 'Display', icon:'pi pi-fw pi-desktop', to:'/display'},
+						{label: 'Elevation', icon:'pi pi-fw pi-external-link', to:'/elevation'},
+						{label: 'Flexbox', icon:'pi pi-fw pi-directions', to:'/flexbox'},
+						{label: 'Icons', icon:'pi pi-fw pi-prime', to:'/icons'},
+						{label: 'Widgets', icon:'pi pi-fw pi-star', to:'/widgets'},
+						{label: 'Grid System', icon:'pi pi-fw pi-th-large', to:'/grid'},
+						{label: 'Spacing', icon:'pi pi-fw pi-arrow-right', to:'/spacing'},
+						{label: 'Typography', icon:'pi pi-fw pi-align-center', to:'/typography'},
+						{label: 'Text', icon:'pi pi-fw pi-pencil', to:'/text'},
+					]
+				},
+				{
+                    label: "UI Blocks", icon: "pi pi-building",
+                    items: [
+                        {label: "Free Blocks", icon: "pi pi-fw pi-eye", to: "/blocks", badge: "NEW"},
+                        {label: "All Blocks", icon: "pi pi-fw pi-globe", url: "https://www.primefaces.org/primeblocks-vue"}
+                    ]
+                },
+				{
+					label: 'Pages', icon: 'pi pi-fw pi-briefcase', badge: 8, badgeStyleClass: 'teal-badge',
+					items: [
+						{label: 'Crud', icon: 'pi pi-fw pi-pencil', to: '/crud'},
+						{label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', to: '/calendar'},
+						{label: 'Timeline', icon: 'pi pi-fw pi-calendar', to: '/timeline'},
+						{label: 'Landing', icon: 'pi pi-fw pi-globe', url: 'pages/landing.html', target: '_blank'},
+						{label: 'Login', icon: 'pi pi-fw pi-sign-in', to: '/login'},
+						{label: 'Invoice', icon: 'pi pi-fw pi-dollar', to: '/invoice'},
+						{label: 'Help', icon: 'pi pi-fw pi-question-circle', to: '/help'},
+						{label: 'Error', icon: 'pi pi-fw pi-times-circle', to: '/error'},
+						{label: 'Not Found', icon: 'pi pi-fw pi-exclamation-circle', to: '/notfound'},
+						{label: 'Access Denied', icon: 'pi pi-fw pi-lock', to: '/access'},
+						{label: 'Empty', icon: 'pi pi-fw pi-circle-off', to: '/empty'}
+					]
+				},
+				{
+					label: 'Hierarchy', icon: 'pi pi-fw pi-align-left',
+					items: [
+						{
+							label: 'Submenu 1', icon: 'pi pi-fw pi-align-left',
+							items: [
+								{
+									label: 'Submenu 1.1', icon: 'pi pi-fw pi-align-left',
+									items: [
+										{label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-align-left'},
+										{label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-align-left'},
+										{label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-align-left'},
+									]
+								},
+								{
+									label: 'Submenu 1.2', icon: 'pi pi-fw pi-align-left',
+									items: [
+										{label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-align-left'},
+										{label: 'Submenu 1.2.2', icon: 'pi pi-fw pi-align-left'}
+									]
+								},
+							]
+						},
+						{
+							label: 'Submenu 2', icon: 'pi pi-fw pi-align-left',
+							items: [
+								{
+									label: 'Submenu 2.1', icon: 'pi pi-fw pi-align-left',
+									items: [
+										{label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-align-left'},
+										{label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-align-left'},
+										{label: 'Submenu 2.1.3', icon: 'pi pi-fw pi-align-left'},
+									]
+								},
+								{
+									label: 'Submenu 2.2', icon: 'pi pi-fw pi-align-left',
+									items: [
+										{label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-align-left'},
+										{label: 'Submenu 2.2.2', icon: 'pi pi-fw pi-align-left'}
+									]
+								},
+							]
+						}
+					]
+				},
+				{
+					label: 'Start', icon: 'pi pi-fw pi-download',
+					items: [
+						{
+							label: 'Buy Now', icon: 'pi pi-shopping-cart', command: () => { window.location = "https://www.primefaces.org/store"}
+						},
+						{
+							label: 'Documentation', icon: 'pi pi-fw pi-info-circle', to: '/documentation'
+						}
+					]
+				}
+            ],
+			layoutColors: [
+				{name:'Amber Pink', file:'amber', color:'#FFB300'},
+				{name:'Blue Amber', file:'blue', color:'#1E88E5'},
+				{name:'Blue Grey Green', file:'bluegrey', color:'#607D8B'},
+				{name:'Brown Cyan', file:'brown', color:'#795548'},
+				{name:'Cyan Amber', file:'cyan', color:'#00BCD4'},
+				{name:'Deep Orange Cyan', file:'deeporange', color:'#F4511E'},
+				{name:'Deep Purple Orange', file:'deeppurple', color:'#5E35B1'},
+				{name:'Green Brown', file:'green', color:'#43A047'},
+				{name:'Grey Indigo', file:'grey', color:'#757575'},
+				{name:'Indigo Pink', file:'indigo', color:'#3f51b5'},
+				{name:'Light Blue Blue Grey', file:'lightblue', color:'#03A9F4'},
+				{name:'Light Green Purple', file:'lightgreen', color:'#7CB342'},
+				{name:'Lime Blue Grey', file:'lime', color:'#C0CA33'},
+				{name:'Orange Indigo', file:'orange', color:'#FB8C00'},
+				{name:'Pink Amber', file:'pink', color:'#D81B60'},
+				{name:'Purple Pink', file:'purple', color:'#8E24AA'},
+				{name:'Teal Red', file:'teal', color:'#009688'},
+				{name:'Yellow Teal', file:'yellow', color:'#FBC02D'},
+			],
+			layoutSpecialColors: [
+				{name:'Reflection', file:'reflection', image:'reflection.png'},
+				{name:'Moody', file:'moody', image:'moody.png'},
+				{name:'Cityscape', file:'cityscape', image:'cityscape.png'},
+				{name:'Cloudy', file:'cloudy', image:'cloudy.png'},
+				{name:'Storm', file:'storm', image:'storm.png'},
+				{name:'Palm', file:'palm', image:'palm.png'},
+				{name:'Flatiron', file:'flatiron', image:'flatiron.png'},
+			],
+			themeColors: [
+                {name: 'blue', color: '#2196F3'},
+                {name: 'bluegrey', color: '#607D8B'},
+                {name: 'brown', color: '#4E342E'},
+                {name: 'cyan', color: '#00BCD4'},
+                {name: 'deeppurple', color: '#673AB7'},
+                {name: 'deeporange', color: '#FF5722'},
+                {name: 'green', color: '#4CAF50'},
+                {name: 'grey', color: '#757575'},
+                {name: 'indigo', color: '#3F51B5'},
+                {name: 'lightblue', color: '#03A9F4'},
+                {name: 'orange', color: '#FF9800'},
+                {name: 'pink', color: '#E91E63'},
+                {name: 'purple', color: '#9C27B0'},
+                {name: 'teal', color: '#009688'}
+			]
+        }
+    },
+    watch: {
+        $route() {
+            this.menuActive = false;
+            this.$toast.removeAllGroups();
+        }
+    },
+    methods: {
+        onWrapperClick() {
+			if (!this.menuClick && !this.menuButtonClick && this.mobileMenuActive) {
+				this.mobileMenuActive = false;
+			}
+
+			if (!this.topbarMenuClick && !this.topbarMenuButtonClick) {
+				this.activeTopbarItem =  null;
+				this.topbarMenuActive = false;
+			}
+
+			if(!this.menuClick) {
+				if(this.isHorizontal() || this.isOverlay()) {
+					this.menuActive = false;
+					EventBus.emit('reset-active-index');
+				}
+			}
+
+			this.menuClick = false;
+			this.menuButtonClick = false;
+			this.topbarMenuClick = false;
+			this.topbarMenuButtonClick = false;
+        },
+		onMenuButtonClick(event) {
+			this.menuButtonClick = true;
+
+			if (this.isMobile()) {
+				this.mobileMenuActive = !this.mobileMenuActive;
+			}
+
+			event.preventDefault();
+		},
+		onTopbarItemClick(event) {
+			this.topbarMenuClick = true;
+			if (this.activeTopbarItem === event.item)
+				this.activeTopbarItem = null;
+			else
+				this.activeTopbarItem = event.item;
+
+			event.originalEvent.preventDefault();
+		},
+		onTopbarMobileMenuButtonClick(event) {
+			this.topbarMenuButtonClick = true;
+			this.topbarMenuActive = !this.topbarMenuActive;
+			event.preventDefault();
+		},
+		onSidebarClick() {
+			this.menuClick = true;
+		},
+		onSidebarMouseEnter() {
+			if(!this.isMobile()) {
+				if (this.sidebarTimeout) {
+				clearTimeout(this.sidebarTimeout);
+			}
+				this.$refs.sidebar.classList.add('layout-sidebar-active');
+				this.sidebarActive = true;
+			}
+		},
+		onSidebarMouseLeave() {
+			this.sidebarTimeout = setTimeout(() => {
+				this.$refs.sidebar.classList.remove('layout-sidebar-active');
+			}, 250);
+			this.sidebarActive = false;
+		},
+		onToggleMenuClick() {
+			this.layoutMode = (this.layoutMode !== 'static') ? 'static' : 'overlay';
+		},
+		isOverlay() {
+			return this.layoutMode === 'overlay';
+		},
+		isHorizontal() {
+			return this.layoutMode === 'horizontal';
+		},
+		onRootMenuItemClick() {
+			this.menuActive = !this.menuActive;
+		},
+		onMenuItemClick(event) {
+			if(!event.item.items) {
+				EventBus.emit('reset-active-index');
+			}
+			if(!event.item.items && this.isHorizontal()) {
+				this.menuActive = false;
+			}
+			if(!event.item.items && this.isMobile()) {
+				this.mobileMenuActive = false;
+			}
+		},
+		onLayoutChange(layoutMode) {
+			this.layoutMode = layoutMode;
+		},
+		onMenuColorChange(menuColor) {
+            this.$emit('menu-color-change', menuColor);
+		},
+        changeLayoutScheme(scheme) {
+            this.$emit('layout-scheme-change', scheme);
+		},
+		changeTheme(theme) {
+			this.$emit('theme-change', theme);
+		},
+		changeLayout(layout) {
+			this.$emit('layout-change', layout);
+		},
+		isMobile() {
+			return window.innerWidth <= 1024;
+		},
+		changeOrientation(value) {
+			this.isRTL = value;
+		}
+    },
+    computed: {
+        containerClass() {
+            return ['layout-wrapper', {
+				'layout-wrapper-static': this.layoutMode === 'static',
+				'layout-menu-horizontal': this.layoutMode === 'horizontal',
+				'layout-wrapper-active': this.mobileMenuActive,
+				'p-input-filled': this.$primevue.config.inputStyle === 'filled',
+				'p-ripple-disabled': this.$primevue.config.ripple === false,
+				'layout-rtl': this.isRTL
+			}];
+        },
+		sidebarClass() {
+			return ['layout-sidebar', {'layout-sidebar-dark': this.darkMenu}];
+		}
+    },
+    components: {
+        'AppTopBar': AppTopBar,        
+        'AppConfig': AppConfig,
+        'AppFooter': AppFooter,
+        'AppBreadcrumb': AppBreadcrumb
+		//'AppMenu': AppMenu,
+    }
+}
+</script>
+
+<style lang="scss">
+@import './App.scss';
+</style>
